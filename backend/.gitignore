@@ -1,0 +1,13 @@
+# Dependencias de paquetes (¡Nunca se suben!)
+node_modules/
+dist/
+.angular/
+
+# Configuración local y Secretos (¡Muy importante para la IA!)
+.env
+.env.local
+
+# Archivos de sistema y logs
+npm-debug.log*
+yarn-error.log*
+.DS_Store

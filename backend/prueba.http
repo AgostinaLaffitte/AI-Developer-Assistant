@@ -1,0 +1,42 @@
+### Prueba 1: Mejorar un texto (Editor)
+POST http://localhost:3000/api/improve-text
+Content-Type: application/json
+
+{
+    "text": "este es mi proyecto de ia que sirve para explicar codigo y quiero que se vea mas pro",
+    "filters": {
+        "tone": "profesional",
+        "language": "español"
+    }
+}
+
+###
+
+### Prueba 2: Explicar un código (Tutor)
+POST http://localhost:3000/api/explain-code
+Content-Type: application/json
+
+{
+    "code": "const sumar = (a, b) => a + b;",
+    "filters": {
+        "language": "español"
+    }
+}
+
+###
+
+### Prueba 3: Generar Tests (Tester)
+POST http://localhost:3000/api/generate-tests
+Content-Type: application/json
+
+{
+    "code": "function esPar(n) { return n % 2 === 0; }",
+    "filters": {
+        "framework": "Jest"
+    }
+}
+
+###
+
+### Prueba 4: Salud del servidor (Health Check)
+GET http://localhost:3000/health

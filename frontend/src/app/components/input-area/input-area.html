@@ -1,0 +1,19 @@
+<div class="input-card">
+  <label class="label-orange">¿Qué quieres hacer hoy?</label>
+  
+  <select [(ngModel)]="selectedType" class="dark-input select-orange">
+    <option value="editor">✨ Mejorar Texto / Documentación</option>
+    <option value="tutor">🎓 Explicar Código (Senior Tutor)</option>
+    <option value="tester">🧪 Generar Tests Unitarios</option>
+  </select>
+
+  <textarea 
+    [(ngModel)]="userInput" 
+    placeholder="Pega tu código o texto aquí..."
+    class="dark-input main-textarea">
+  </textarea>
+
+  <button (click)="sendToAi()" class="btn-orange">
+    Procesar con IA 🚀
+  </button>
+</div>

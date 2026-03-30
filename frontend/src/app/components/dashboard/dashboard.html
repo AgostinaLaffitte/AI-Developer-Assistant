@@ -1,0 +1,53 @@
+<div class="dashboard-wrapper">
+  <header class="app-header">
+    <div class="codespark-logo">
+      <div class="logo-icon">
+        <span class="letter-c">C</span>
+        <span class="spark-flare">✦</span>
+      </div>
+      <h1 class="brand-name">Code<span>Spark</span></h1>
+    </div>
+    <p class="tagline">IA-Powered Developer Assistant</p>
+  </header>
+
+  <main class="main-content">
+    <div class="grid-layout">
+      
+      <div class="actions-column">
+        <app-input-area (onSend)="handleAiRequest($event)"></app-input-area>
+        
+        <app-output-display 
+          [result]="aiResult" 
+          [loading]="isLoading">
+        </app-output-display>
+      </div>
+
+      <section class="history-section" *ngIf="history.length > 0">
+        <h2 class="history-title">Consultas Recientes</h2>
+        <div class="history-list">
+          <div *ngFor="let item of history" class="history-item" (click)="loadFromHistory(item)">
+            <span class="badge-type">{{ item.type }}</span>
+            <p>{{ item.title }}</p>
+            <small class="history-date">{{ item.date | date:'dd/MM HH:mm' }}</small>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  
+  </main>
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="letter-c">C</span>
+        <span class="spark">Spark</span>
+      </div>
+      <p class="footer-text">© 2026 CodeSpark AI. Desarrollado para programadores.</p>
+      <div class="footer-links">
+        <a href="https://github.com/AgostinaLaffitte/AI-Developer-Assistant/blob/main/README.md">Documentación</a>
+        <a href="https://github.com/AgostinaLaffitte">GitHub</a>
+        <a href="https://agostinalaffitte.github.io/AgostinaLaffitte/">´Portafolio</a>
+      </div>
+    </div>
+  </footer>
+</div> 

@@ -1,0 +1,182 @@
+/* --- TARJETA CONTENEDORA (ESTILO EDITOR) --- */
+.output-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  border: 1px solid #333;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* --- CABECERA ESTILO MAC/VENTANA --- */
+.output-header {
+  background-color: #252526;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.dots-container {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.title {
+  color: #888;
+  font-size: 0.75rem;
+  margin-left: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* --- BOTÓN DE COPIAR --- */
+.copy-btn {
+  margin-left: auto; /* Empuja el botón a la derecha */
+  background-color: transparent;
+  color: #ff9800;
+  border: 1px solid #ff9800;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.copy-btn:hover {
+  background-color: #ff9800;
+  color: #1e1e1e;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+}
+
+.copy-btn:active {
+  transform: translateY(0);
+}
+
+/* --- CUERPO DEL RESULTADO --- */
+.output-body {
+  padding: 25px;
+  color: #d4d4d4;
+  flex-grow: 1;
+  overflow-y: auto;
+  min-height: 200px;
+  background: #121212; /* Un toque más oscuro que la tarjeta */
+}
+
+.result-text {
+  white-space: pre-wrap;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* --- LOADER Y PLACEHOLDERS --- */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 15px;
+  color: #666;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 152, 0, 0.1);
+  border-top: 3px solid #ff9800;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.placeholder-text {
+  color: #555;
+  font-style: italic;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* --- SISTEMA DE TOASTS CORREGIDO --- */
+.toast-container {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%, 100px); /* Abajo e invisible */
+  opacity: 0;
+  z-index: 999999;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #2a2a2a;
+  border: 1px solid #ff9800;
+  border-radius: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  padding: 10px 25px;
+}
+
+.toast-container.show {
+  transform: translate(-50%, 0); /* Sube a su posición */
+  opacity: 1;
+}
+
+.toast-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-icon {
+  font-size: 1.1rem;
+}
+
+.toast-content p {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+/* --- ANIMACIONES --- */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Scrollbar personalizado interno */
+.output-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.output-body::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+.output-body::-webkit-scrollbar-thumb:hover {
+  background: #444;
+}
