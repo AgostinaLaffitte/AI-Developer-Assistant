@@ -39,4 +39,4 @@ Sigue estos pasos para ejecutar **CodeSpark** en tu entorno local:
 ### 1. Clonar el repositorio
 ```bash
 git clone [https://github.com/tu-usuario/codespark.git](https://github.com/tu-usuario/codespark.git)](https://github.com/AgostinaLaffitte/AI-Developer-Assistant.git)
-cd codespark
+
