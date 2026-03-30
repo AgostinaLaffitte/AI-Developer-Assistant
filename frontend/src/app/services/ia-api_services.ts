@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AiApiService {
   // La URL de tu servidor Node.js que ya probamos con el .http
-  private apiUrl = 'http://localhost:3000/api';
+  private apiUrl = 'https://codespark-backend-4yld.onrender.com/api';
 
   constructor(private http: HttpClient) { }
 
